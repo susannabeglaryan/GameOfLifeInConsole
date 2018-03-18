@@ -4,9 +4,9 @@ var Gishatich = require("./class.gishatich");
 var XotakerGishatich = require("./class.XotakerGishatich");
 var rn = require('random-number');
 var options = {
-  min:  0
-, max:  100
-, integer: true
+    min: 0
+    , max: 100
+    , integer: true
 }
 
 function genMatrix(w, h) {
@@ -26,10 +26,14 @@ function genMatrix(w, h) {
     return matrix;
 }
 
-var matrix;
+global.matrix;
 var w = 30;
 var h = 30;
-var grassArr = [], xotakerArr = [], gishatichArr = [], xotakerGishatichArr = [];
+global.grassArr = [];
+global.xotakerArr = [];
+global.gishatichArr = [];
+global.xotakerGishatichArr = [];
+
 
 setInterval(function () {
     matrix = genMatrix(w, h);
@@ -94,12 +98,7 @@ setInterval(function () {
         xotakerGishatichArr[i].mahanal();
     }
 
-    // setInterval(function() {
-    //     var lines = process.stdout.getWindowSize()[1];
-    //     for (var i = 0; i < lines; i++) {
-    //         console.log('\r');
-    //     }
-    // }, 1000);
-    
-}, 1000);
+    console.clear();
+
+}, 100);
 

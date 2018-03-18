@@ -1,4 +1,5 @@
 var KendaniEak = require("./class.KendaniEak");
+var randomItem = require('random-item');
 
 class XotakerGishatich extends KendaniEak {
     constructor(x, y, index) {
@@ -34,7 +35,7 @@ class XotakerGishatich extends KendaniEak {
     }
 
     sharjvel() {
-        var vand = random(this.yntrelVandak(0));
+        var vand = randomItem(this.yntrelVandak(0));
         if (vand && this.multiply >= this.speed / 2) {
             this.energy--;
             matrix[this.y][this.x] = 0;
@@ -45,7 +46,7 @@ class XotakerGishatich extends KendaniEak {
 
     utelXotaker() {
         this.energy--;
-        var vand = random(this.yntrelVandak(2));
+        var vand = randomItem(this.yntrelVandak(2));
         if (vand && this.multiply >= this.speed / 2) {
             this.energy += this.speed / 2;
             matrix[this.y][this.x] = 0;
@@ -62,7 +63,7 @@ class XotakerGishatich extends KendaniEak {
 
     utelXot() {
         this.energy--;
-        var vand = random(this.yntrelVandak(1));
+        var vand = randomItem(this.yntrelVandak(1));
         if (vand && this.multiply >= this.speed / 2) {
             this.energy += this.speed / 4;
             matrix[this.y][this.x] = 0;
@@ -78,7 +79,7 @@ class XotakerGishatich extends KendaniEak {
     }
 
     bazmanal() {
-        var vand = random(this.yntrelVandak(0));
+        var vand = randomItem(this.yntrelVandak(0));
         if (vand && this.energy >= this.speed) {
             this.energy = 1;
             var newxotakergishatich = new XotakerGishatich(vand[0], vand[1], 4);
